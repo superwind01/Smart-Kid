@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Smart Kid</string>
+    <string name="Hello">Hello</string>
+    <string name="Name">Hieu Le</string>
+    <string name="School">School</string>
+    <string name="formalStudy">Formal Study</string>
+    <string name="Help">Help</string>
+    <string name="vocabulary">Vocabulary</string>
+    <string name="Plus">Plus+</string>
+    <string name="examPreparationFurnace">Exam preparation furnace</string>
+    <string name="arena">Arena</string>
+    <string name="supplementStudy">Supplement Study</string>
+    <string name="More"><![CDATA[More  >]]></string>
+    <string name="learnVocabulary">Learn Vocabulary</string>
+    <string name="learningOutcome">Learning Outcomes</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="preSchool">Preschool</string>
+    <string name="Youth">Youth</string>
+    <string name="Alphabet">Alphabet</string>
+    <string name="lessons">Lessons</string>
+    <string name="meaning">Meaning</string>
+    <string name="example">Example</string>
+    <string name="translate">Translate</string>
+    <string name="pronouce">PRONOUNCE</string>
+    <string name="picture">Picture</string>
+    <string name="previous">Previous</string>
+    <string name="speech">Speech</string>
+    <string name="next">Next</string>
+    <string name="Shape">Shape</string>
+    <string name="famous">Famous</string>
+    <string name="Categories">Categories</string>
+    <string name="watchedmost">Watched most</string>
+</resources>

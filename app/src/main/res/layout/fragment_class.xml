@@ -1,0 +1,83 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="600dp"
+    tools:context="Fragments.ClassFrag"
+    android:background="@drawable/box_round_top"
+    android:backgroundTint="@color/white">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:text="@string/preSchool"
+            android:textStyle="bold"
+            android:textSize="26dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_class3_4"
+                        android:elevation="1dp"
+                        android:background="@drawable/btn_class"
+                        android:text="3-4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"/>
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_class4_5"
+                        android:elevation="1dp"
+                        android:background="@drawable/btn_class"
+                        android:text="4-5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"/>
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_class5_6"
+                        android:elevation="1dp"
+                        android:background="@drawable/btn_class"
+                        android:text="5-6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"/>
+                </LinearLayout>
+            </TableLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:text="@string/Youth"
+            android:textStyle="bold"
+            android:textSize="26dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_class18_36"
+                android:elevation="1dp"
+                android:background="@drawable/btn_class"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="18-36"
+                android:layout_margin="5dp"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</FrameLayout>

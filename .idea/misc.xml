@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Phat_trien_ung_dung/EasyClass/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1495" />
+        <entry key="..\:/Phat_trien_ung_dung/EasyClass/app/src/main/res/drawable/box_round.xml" value="0.1955" />
+        <entry key="..\:/Phat_trien_ung_dung/EasyClass/app/src/main/res/drawable/box_round_retangle.xml" value="0.1495" />
+        <entry key="..\:/Phat_trien_ung_dung/EasyClass/app/src/main/res/drawable/box_round_retangle_green.xml" value="0.124" />
+        <entry key="..\:/Phat_trien_ung_dung/EasyClass/app/src/main/res/drawable/box_round_shuttle.xml" value="0.1955" />
+        <entry key="..\:/Phat_trien_ung_dung/EasyClass/app/src/main/res/drawable/box_round_top.xml" value="0.114" />
+        <entry key="..\:/Phat_trien_ung_dung/EasyClass/app/src/main/res/drawable/btn_class.xml" value="0.104" />
+        <entry key="..\:/Phat_trien_ung_dung/EasyClass/app/src/main/res/drawable/ic_baseline_question_mark_24.xml" value="0.1495" />
+        <entry key="..\:/Phat_trien_ung_dung/EasyClass/app/src/main/res/drawable/ic_ondemand_video.xml" value="0.124" />
+        <entry key="..\:/Phat_trien_ung_dung/EasyClass/app/src/main/res/drawable/img_button_circle.xml" value="0.1495" />
+        <entry key="..\:/Phat_trien_ung_dung/EasyClass/app/src/main/res/layout/activity_main.xml" value="0.17543859649122806" />
+        <entry key="..\:/Phat_trien_ung_dung/EasyClass/app/src/main/res/layout/activity_vocabulary.xml" value="0.16893115942028986" />
+        <entry key="..\:/Phat_trien_ung_dung/EasyClass/app/src/main/res/layout/activity_vocabulary_lesson.xml" value="0.176" />
+        <entry key="..\:/Phat_trien_ung_dung/EasyClass/app/src/main/res/layout/fragment_class.xml" value="0.264" />
+        <entry key="..\:/Phat_trien_ung_dung/EasyClass/app/src/main/res/layout/fragment_item.xml" value="0.16893115942028986" />
+        <entry key="..\:/Phat_trien_ung_dung/EasyClass/app/src/main/res/layout/fragment_item_list.xml" value="0.16893115942028986" />
+        <entry key="..\:/Phat_trien_ung_dung/EasyClass/app/src/main/res/layout/fragment_learn_vocabulary.xml" value="0.1" />
+        <entry key="..\:/Phat_trien_ung_dung/EasyClass/app/src/main/res/layout/fragment_learning_outcomes.xml" value="0.16893115942028986" />
+        <entry key="..\:/Phat_trien_ung_dung/EasyClass/app/src/main/res/layout/grid_exampreparationfurnace.xml" value="0.1796875" />
+        <entry key="..\:/Phat_trien_ung_dung/EasyClass/app/src/main/res/layout/grid_formalstudy.xml" value="0.536" />
+        <entry key="..\:/Phat_trien_ung_dung/EasyClass/app/src/main/res/layout/grid_item.xml" value="0.176" />
+        <entry key="..\:/Phat_trien_ung_dung/EasyClass/app/src/main/res/layout/grid_supplementstudy.xml" value="0.1796875" />
+        <entry key="..\:/Phat_trien_ung_dung/EasyClass/app/src/main/res/layout/list_vocabulary.xml" value="0.20199275362318841" />
+        <entry key="..\:/Phat_trien_ung_dung/EasyClass/app/src/main/res/layout/tesst.xml" value="0.11302083333333333" />
+        <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/drawable/ic_image.xml" value="0.1105" />
+        <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1105" />
+        <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/drawable/img_button_circle.xml" value="0.1105" />
+        <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/layout/activity_video.xml" value="0.136" />
+        <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/layout/activity_video_show.xml" value="0.14270833333333333" />
+        <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/layout/activity_vocabulary.xml" value="0.2105978260869565" />
+        <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/layout/activity_vocabulary_lesson.xml" value="0.10833333333333334" />
+        <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/layout/cardview_video.xml" value="0.23854166666666668" />
+        <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/layout/fragment_categories.xml" value="0.25416666666666665" />
+        <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/layout/fragment_famous.xml" value="0.25416666666666665" />
+        <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/layout/grid_item.xml" value="0.2105978260869565" />
+        <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/layout/grid_video.xml" value="0.10833333333333334" />
+        <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/layout/list_name_by_topic.xml" value="0.11979166666666667" />
+        <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/layout/list_song.xml" value="0.12083333333333333" />
+        <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/layout/list_video_by_topic.xml" value="0.23854166666666668" />
+        <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/layout/list_vocabulary.xml" value="0.2105978260869565" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
+  </component>
+</project>
