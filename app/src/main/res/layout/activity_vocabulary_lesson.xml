@@ -13,11 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="left"
         android:text="@string/vocabulary"
-<<<<<<< HEAD
         android:textSize="30sp"
-=======
-        android:textSize="40sp"
->>>>>>> 67b57af (Initial commit)
         android:textStyle="bold"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
@@ -175,7 +171,6 @@
                     android:src="@drawable/ic_arrow_back"
                     android:background="@drawable/box_round_retangle"
                     />
-
                 <TextView
                     android:text="@string/previous"
                     android:layout_gravity="center"
@@ -204,7 +199,6 @@
                     android:src="@drawable/ic_mic"
                     android:background="@drawable/box_round_retangle"
                     />
-
                 <TextView
                     android:text="@string/speech"
                     android:layout_gravity="center"

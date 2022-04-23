@@ -14,13 +14,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.easyclass.ExpandableHeightGridView;
 import com.example.easyclass.MainActivity;
 import com.example.easyclass.R;
 
 import java.util.ArrayList;
 
+import API.Book;
 import API.Class;
 import API.ModelCommon;
+import Adapter.GridViewAdapter;
 import VolleyService.*;
 
 /**
@@ -54,6 +57,29 @@ public class ClassFrag extends Fragment {
         Button btnClass4_5 = view.findViewById(R.id.btn_class4_5);
         Button btnClass5_6 = view.findViewById(R.id.btn_class5_6);
         Button btnClass18_36 = view.findViewById(R.id.btn_class18_36);
+
+        ExpandableHeightGridView gridBook = (ExpandableHeightGridView) view.findViewById(R.id.grid_book);
+        gridBook.setExpanded(true);
+
+
+        VolleyService.getRequest(getContext(), "Book/GetAll", new VolleyResponseListener() {
+            @Override
+            public void onError(String message) {
+
+            }
+
+            @Override
+            public void onResponse(ModelCommon response) {
+                ArrayList<Book> books = new ArrayList<>();
+                books = response.getBooks();
+                ArrayList<String> book = new ArrayList<>();
+                for (int i =0; i <books.size() ; i++)
+                {
+                    book.add(books.get(i).getNameBook());
+                }
+                gridBook.setAdapter(new GridViewAdapter(getContext(),book.toArray(new String[0]),null,3));
+            }
+        });
 
         btnClass3_4.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -89,7 +89,6 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/box_round_top"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@id/frame_class"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout_head">
@@ -299,7 +298,9 @@
     <FrameLayout
         android:id="@+id/frame_class"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        android:layout_height="800dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

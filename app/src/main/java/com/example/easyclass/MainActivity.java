@@ -98,6 +98,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        gridItem.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                if(i == 4)
+                {
+                    Intent intent = new Intent(MainActivity.this,VideoActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
+
         Button btnClass = findViewById(R.id.btn_chose_class);
         if(bundle != null)
         {
@@ -109,11 +120,9 @@ public class MainActivity extends AppCompatActivity {
         btnClass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ClassFrag classFrag = new ClassFrag();
-
                 FragmentTransaction ft = MainActivity.this.getSupportFragmentManager().beginTransaction();
 
-                ft.add(R.id.frame_class, classFrag);
+                ft.add(R.id.frame_class,  new ClassFrag());
                 ft.addToBackStack(null);
                 ft.commit();
             }

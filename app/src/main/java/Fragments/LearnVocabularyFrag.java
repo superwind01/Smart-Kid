@@ -21,7 +21,9 @@ import com.example.easyclass.VocabularyLessonActivity;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Locale;
 
 import API.Class;
 import API.ModelCommon;
@@ -58,6 +60,12 @@ public class LearnVocabularyFrag extends Fragment {
                 if(response!=null)
                 {
                     final ArrayList<Vocabulary> vocabularies = response.getVocabularies();
+                    Collections.sort(vocabularies, new Comparator<Vocabulary>() {
+                        @Override
+                        public int compare(Vocabulary o1, Vocabulary o2) {
+                            return o1.getName().toUpperCase().compareTo(o2.getName().toUpperCase());
+                        }
+                    });
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {

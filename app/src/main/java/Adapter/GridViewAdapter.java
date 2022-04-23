@@ -81,6 +81,15 @@ public class GridViewAdapter extends BaseAdapter {
                 imageView.setImageResource(Logo[i]);
                 break;
             }
+            case 3:
+            {
+                view = layoutInflater.inflate(R.layout.grid_book, null);
+                TextView textView = (TextView) view.findViewById(R.id.txt_book);
+                ImageView imageView = (ImageView) view.findViewById(R.id.img_book);
+
+                textView.setText(nameLogo[i]);
+                break;
+            }
         }
         return view;
     }

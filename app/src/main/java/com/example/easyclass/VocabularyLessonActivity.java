@@ -44,7 +44,7 @@ public class VocabularyLessonActivity extends AppCompatActivity {
             public void onResponse(ModelCommon response) {
                 if(response!=null)
                 {
-                    final ArrayList<Vocabulary> vocabularies = response.getVocabularies();;
+                    final ArrayList<Vocabulary> vocabularies = response.getVocabularies();
                     Collections.sort(vocabularies, new Comparator<Vocabulary>() {
                         @Override
                         public int compare(Vocabulary o1, Vocabulary o2) {

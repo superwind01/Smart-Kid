@@ -28,7 +28,8 @@
     <string name="speech">Speech</string>
     <string name="next">Next</string>
     <string name="Shape">Shape</string>
+    <string name="listBook">List Book</string>
     <string name="famous">Famous</string>
     <string name="Categories">Categories</string>
-    <string name="watchedmost">Watched most</string>
+    <string name="watchedmost">Watched Most</string>
 </resources>

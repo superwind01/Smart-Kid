@@ -23,6 +23,7 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import API.Book;
 import API.Class;
 import API.ModelCommon;
 import API.Song;
@@ -38,7 +39,7 @@ public class VolleyService {
         String url =ServiceInfo.BaseUrl + Url;
 
         //Get Api
-        RequestQueue requestQueue = Volley.newRequestQueue(context.getApplicationContext());
+        RequestQueue requestQueue = Volley.newRequestQueue(context);
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
@@ -50,7 +51,7 @@ public class VolleyService {
                     JsonParser parser = new JsonParser();
 
                     //THUC HIEN LAY DATA THEO URL
-                    if(Url == "Class/GetAll") {
+                    if(Url == "Class/") {
 
                         ArrayList<Class> classes = new ArrayList<>();
                         for (int i = 0; i < response.length(); i++) {
@@ -60,7 +61,7 @@ public class VolleyService {
                         }
                         modelCommon.setClasses(classes);
                     }
-                    else if(Url == "Vocalbulary/GetAll")
+                    else if(Url.startsWith("Vocalbulary/"))
                     {
                         ArrayList<Vocabulary> vocabularies = new ArrayList<>();
                         for (int i = 0; i < response.length(); i++) {
@@ -80,7 +81,7 @@ public class VolleyService {
                         }
                         modelCommon.setSongs(songs);
                     }
-                    else if(Url == "Topic/GetAll")
+                    else if(Url.startsWith("Topic/"))
                     {
                         ArrayList<Topic> topics = new ArrayList<>();
                         for (int i = 0; i < response.length(); i++) {
@@ -90,7 +91,16 @@ public class VolleyService {
                         }
                         modelCommon.setTopics(topics);
                     }
-
+                    else if(Url.startsWith("Book/"))
+                    {
+                        ArrayList<Book> books = new ArrayList<>();
+                        for (int i = 0; i < response.length(); i++) {
+                            JSONObject rec = response.optJSONObject(i);
+                            JsonElement mJson = parser.parse(String.valueOf(rec));
+                            books.add(gson.fromJson(mJson, Book.class));
+                        }
+                        modelCommon.setBooks(books);
+                    }
                     //TAO SU KIEN CHO LISTENER
                     listener.onResponse(modelCommon);
             } }

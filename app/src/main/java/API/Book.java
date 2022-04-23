@@ -5,8 +5,8 @@ public class Book {
     private String nameBook;
     private String symbol;
     private Boolean status;
-    private String cpitClassBook;
-    private String cpitTopicByClassBook;
+//    private String cpitClassBook;
+//    private String cpitTopicByClassBook;
 
     public int getIdBook() {
         return idBook;
@@ -40,19 +40,19 @@ public class Book {
         this.status = status;
     }
 
-    public String getCpitClassBook() {
-        return cpitClassBook;
-    }
-
-    public void setCpitClassBook(String cpitClassBook) {
-        this.cpitClassBook = cpitClassBook;
-    }
-
-    public String getCpitTopicByClassBook() {
-        return cpitTopicByClassBook;
-    }
-
-    public void setCpitTopicByClassBook(String cpitTopicByClassBook) {
-        this.cpitTopicByClassBook = cpitTopicByClassBook;
-    }
+//    public String getCpitClassBook() {
+//        return cpitClassBook;
+//    }
+//
+//    public void setCpitClassBook(String cpitClassBook) {
+//        this.cpitClassBook = cpitClassBook;
+//    }
+//
+//    public String getCpitTopicByClassBook() {
+//        return cpitTopicByClassBook;
+//    }
+//
+//    public void setCpitTopicByClassBook(String cpitTopicByClassBook) {
+//        this.cpitTopicByClassBook = cpitTopicByClassBook;
+//    }
 }
