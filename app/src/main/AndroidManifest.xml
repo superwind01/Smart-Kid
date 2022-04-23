@@ -14,10 +14,10 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".VideoShowActivity"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".VideoActivity"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".VocabularyLessonActivity"
             android:exported="false" />
