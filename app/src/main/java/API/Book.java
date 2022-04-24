@@ -1,7 +1,7 @@
 package API;
 
 public class Book {
-    private int idBook;
+    private int idbook;
     private String nameBook;
     private String symbol;
     private Boolean status;
@@ -9,11 +9,11 @@ public class Book {
 //    private String cpitTopicByClassBook;
 
     public int getIdBook() {
-        return idBook;
+        return idbook;
     }
 
     public void setIdBook(int idBook) {
-        this.idBook = idBook;
+        this.idbook = idBook;
     }
 
     public String getNameBook() {

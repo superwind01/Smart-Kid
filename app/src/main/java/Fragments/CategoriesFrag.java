@@ -1,5 +1,7 @@
  package Fragments;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
@@ -39,9 +41,12 @@ public class CategoriesFrag extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_categories, container, false);
 
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("shareClass", Context.MODE_PRIVATE);
+        String idclass = sharedPreferences.getString("classKey","");
+        String idbook = sharedPreferences.getString("bookKey","");
         ArrayList<ListVideo> listVideos = new ArrayList<>();
         //Get Id topic (include get Song inside)
-        VolleyService.getRequest(getContext(), "Topic/GetAll", new VolleyResponseListener() {
+        VolleyService.getRequest(getContext(), "Topic/GetByIDClassAndIDBook/" + idbook + "/" + idclass, new VolleyResponseListener() {
             @Override
             public void onError(String message) {
 

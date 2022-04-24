@@ -1,6 +1,7 @@
 package Fragments;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -58,6 +60,9 @@ public class ClassFrag extends Fragment {
         Button btnClass5_6 = view.findViewById(R.id.btn_class5_6);
         Button btnClass18_36 = view.findViewById(R.id.btn_class18_36);
 
+        SharedPreferences sharedPref = getActivity().getSharedPreferences("shareClass",getContext().MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+
         ExpandableHeightGridView gridBook = (ExpandableHeightGridView) view.findViewById(R.id.grid_book);
         gridBook.setExpanded(true);
 
@@ -78,6 +83,14 @@ public class ClassFrag extends Fragment {
                     book.add(books.get(i).getNameBook());
                 }
                 gridBook.setAdapter(new GridViewAdapter(getContext(),book.toArray(new String[0]),null,3));
+
+                ArrayList<Book> finalBooks = books;
+                gridBook.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        editor.putString("bookKey", String.valueOf(finalBooks.get(i).getIdBook())).apply();
+                    }
+                });
             }
         });
 
@@ -86,6 +99,7 @@ public class ClassFrag extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), MainActivity.class);
                 intent.putExtra("class","3-4");
+                sharedPref.edit().putString("classKey","2").apply();
                 getActivity().finish();
                 startActivity(intent);
             }
@@ -95,6 +109,7 @@ public class ClassFrag extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), MainActivity.class);
                 intent.putExtra("class","4-5");
+                sharedPref.edit().putString("classKey","3").apply();
                 getActivity().finish();
                 startActivity(intent);
             }
@@ -104,6 +119,7 @@ public class ClassFrag extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), MainActivity.class);
                 intent.putExtra("class","5-6");
+                sharedPref.edit().putString("classKey","4").apply();
                 getActivity().finish();
                 startActivity(intent);
             }
@@ -113,6 +129,7 @@ public class ClassFrag extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), MainActivity.class);
                 intent.putExtra("class","18-36");
+                sharedPref.edit().putString("classKey","1").apply();
                 getActivity().finish();
                 startActivity(intent);
             }

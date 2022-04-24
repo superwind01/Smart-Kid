@@ -1,6 +1,8 @@
 package Adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.easyclass.R;
+import com.example.easyclass.VideoShowActivity;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -42,7 +45,7 @@ public class TopicFragAdapter extends RecyclerView.Adapter<TopicFragAdapter.MyVi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyView holder, int position) {
+    public void onBindViewHolder(@NonNull MyView holder, @SuppressLint("RecyclerView") int position) {
         if(holder.getItemViewType() == TYPE_TOPIC)
         {
             LinearLayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
@@ -58,6 +61,19 @@ public class TopicFragAdapter extends RecyclerView.Adapter<TopicFragAdapter.MyVi
 
             ListSongAdapter mAdapter = new ListSongAdapter(context,listVideos.get(position).getSongs());
             holder.recyclerVideoItem.setAdapter(mAdapter);
+
+            mAdapter.setOnItemClickListener(new ListSongAdapter.OnTopicItemClickListener() {
+                @Override
+                public void onItemClick(int i) {
+                    Intent intent = new Intent(context.getApplicationContext(), VideoShowActivity.class);
+                    intent.putExtra("name",listVideos.get(position).getSongs().get(i).getName());
+                    intent.putExtra("path","http://resource.bkt.net.vn/AudioMP4/"+listVideos.get(position).getSongs().get(i).getName()+".mp4");
+                    String a = intent.getStringExtra("name");
+                    String b = intent.getStringExtra("path");
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.getApplicationContext().startActivity(intent);
+                }
+            });
         }
     }
 
