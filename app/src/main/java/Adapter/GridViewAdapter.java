@@ -1,20 +1,19 @@
 package Adapter;
 
 import android.content.Context;
-<<<<<<< HEAD
+
 import android.net.Uri;
-=======
->>>>>>> 67b57af (Initial commit)
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-<<<<<<< HEAD
+
 import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.VideoView;
-=======
+
 import android.widget.TextView;
 >>>>>>> 67b57af (Initial commit)
 
