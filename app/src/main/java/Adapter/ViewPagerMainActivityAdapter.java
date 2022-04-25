@@ -11,6 +11,8 @@ import Fragments.NotificationFrag;
 import Fragments.PersonalFrag;
 import Fragments.StoreFrag;
 
+//VIEW PAGER WAS USED PICK FRAGMENT IN MAIN ACTIVITY
+//WILL USE WITH BOTTOM NAVIGATION IN MAIN ACTIVITY
 public class ViewPagerMainActivityAdapter extends FragmentStateAdapter {
     public ViewPagerMainActivityAdapter(@NonNull FragmentActivity fragment) {
         super(fragment);

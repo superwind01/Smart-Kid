@@ -1,7 +1,6 @@
 package Fragments;
 
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,19 +12,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.easyclass.R;
-import com.example.easyclass.VideoShowActivity;
+import com.example.smartkid.R;
+import com.example.smartkid.VideoShowActivity;
 
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 
 import API.ListVideo;
 import API.ModelCommon;
 import API.Song;
 import API.Topic;
-import API.Vocabulary;
 import Adapter.ListRecyclerVideoAdapter;
 import Adapter.RecyclerVideoAdapter;
 import VolleyService.*;

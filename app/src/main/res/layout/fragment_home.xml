@@ -134,7 +134,7 @@
                             android:textStyle="bold" />
                     </LinearLayout>
 
-                    <com.example.easyclass.ExpandableHeightGridView
+                    <com.example.smartkid.ExpandableHeightGridView
                         android:id="@+id/grid_item"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -188,7 +188,7 @@
                             </LinearLayout>
                         </LinearLayout>
 
-                        <com.example.easyclass.ExpandableHeightGridView
+                        <com.example.smartkid.ExpandableHeightGridView
                             android:id="@+id/grid_formalStudy"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -223,7 +223,7 @@
                                 android:textSize="24sp"
                                 android:textStyle="bold" />
 
-                            <com.example.easyclass.ExpandableHeightGridView
+                            <com.example.smartkid.ExpandableHeightGridView
                                 android:id="@+id/grid_SupplementStudy"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -243,7 +243,7 @@
                         android:textSize="24sp"
                         android:textStyle="bold" />
 
-                    <com.example.easyclass.ExpandableHeightGridView
+                    <com.example.smartkid.ExpandableHeightGridView
                         android:id="@+id/grid_examPreparationFurnace"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

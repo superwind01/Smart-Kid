@@ -1,4 +1,4 @@
-package com.example.easyclass;
+package com.example.smartkid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,15 +15,19 @@ public class VideoShowActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_show);
 
+        //GET INTENT
         Bundle bundle = getIntent().getExtras();
 
         VideoView videoView = findViewById(R.id.video_allSong);
         TextView textView = findViewById(R.id.txt_nameSong);
+        //DECLARE MEDIA CONTROLLER TO CONTROL VIDEO
         MediaController mediaController = new MediaController(VideoShowActivity.this);
 
         textView.setText(bundle.get("name").toString());
+        //SET VIDEO SOURCE
         Uri uri = Uri.parse(bundle.get("path").toString());
         videoView.setVideoURI(uri);
+        //SET MEDIA CONTROLLER
         videoView.setMediaController(mediaController);
         mediaController.setAnchorView(videoView);
     }

@@ -1,8 +1,6 @@
-package com.example.easyclass;
+package com.example.smartkid;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
@@ -10,9 +8,9 @@ import android.os.Bundle;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
-import Adapter.VPAdapter;
+import Adapter.VPVideoAdapter;
 
-public class VocabularyActivity extends AppCompatActivity {
+public class VideoActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
     private ViewPager2 viewPager;
@@ -20,15 +18,16 @@ public class VocabularyActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vocabulary);
+        setContentView(R.layout.activity_video);
         addControls();
     }
 
     private void addControls() {
-        tabLayout = findViewById(R.id.tab_vocabulary);
-        viewPager = findViewById(R.id.vp_vocabulary);
+        tabLayout = findViewById(R.id.tab_video);
+        viewPager = findViewById(R.id.vp_video);
 
-        viewPager.setAdapter(new VPAdapter(this));
+        viewPager.setAdapter(new VPVideoAdapter(this));
+        viewPager.setUserInputEnabled(false);
 
         new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {
             switch (position){
@@ -41,5 +40,4 @@ public class VocabularyActivity extends AppCompatActivity {
         }).attach();
 
     }
-
 }

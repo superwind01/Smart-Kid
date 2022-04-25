@@ -1,13 +1,10 @@
-package com.example.easyclass;
+package com.example.smartkid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.MediaController;
 import android.widget.TextView;
@@ -19,7 +16,6 @@ import java.util.Comparator;
 
 import API.ModelCommon;
 import API.Vocabulary;
-import Adapter.ListViewAdapter;
 import VolleyService.*;
 
 public class VocabularyLessonActivity extends AppCompatActivity {
@@ -29,8 +25,11 @@ public class VocabularyLessonActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vocabulary_lesson);
 
+        //GET INTENT
         Bundle bundle = getIntent().getExtras();
 
+        //GET POSITION PICKED ITEM FROM INTENT
+        //POSITION GET FROM LIST VOCABULARY (VOCABULARY FRAG)
         final int[] position = {(int) bundle.get("position")};
 
         ImageButton btnNext = findViewById(R.id.btn_next);
@@ -45,6 +44,8 @@ public class VocabularyLessonActivity extends AppCompatActivity {
                 if(response!=null)
                 {
                     final ArrayList<Vocabulary> vocabularies = response.getVocabularies();
+
+                    //SORT ARRAY LIST VOCABULARIES AFTER RESPONSE
                     Collections.sort(vocabularies, new Comparator<Vocabulary>() {
                         @Override
                         public int compare(Vocabulary o1, Vocabulary o2) {
@@ -52,6 +53,8 @@ public class VocabularyLessonActivity extends AppCompatActivity {
                         }
                     });
                     addData(vocabularies,position[0]);
+
+                    //CREATE EVEN FOR BUTTON PREVIOUS
                     btnPrevious.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -62,6 +65,7 @@ public class VocabularyLessonActivity extends AppCompatActivity {
                         }
                     });
 
+                    //CREATE EVEN FOR BUTTON NEXT
                     btnNext.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {

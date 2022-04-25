@@ -9,18 +9,15 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 
-import com.example.easyclass.ExpandableHeightGridView;
-import com.example.easyclass.R;
-import com.example.easyclass.VideoActivity;
-import com.example.easyclass.VocabularyActivity;
+import com.example.smartkid.ExpandableHeightGridView;
+import com.example.smartkid.R;
+import com.example.smartkid.VideoActivity;
+import com.example.smartkid.VocabularyActivity;
 
 import Adapter.GridViewAdapter;
-import Fragments.ClassFrag;
 
 public class HomeFrag extends Fragment {
     String[] nameLogo = {"Rank","Mission","Game","Route","Video","Activated","Connect"};
@@ -59,6 +56,8 @@ public class HomeFrag extends Fragment {
 
         Bundle bundle = getActivity().getIntent().getExtras();
 
+        // EXPANDABLE HEIGHT GRIDVIEW
+        // MUST USING THIS CLASS BECAUSE GRIDVIEW CAN'T INSIDE SCROLL VIEW
         ExpandableHeightGridView gridItem = (ExpandableHeightGridView) view.findViewById(R.id.grid_item);
         gridItem.setExpanded(true);
         ExpandableHeightGridView gridFormalStudy = (ExpandableHeightGridView) view.findViewById(R.id.grid_formalStudy);
@@ -112,6 +111,7 @@ public class HomeFrag extends Fragment {
         {
             btnClass.setText((String) bundle.get("class"));
         }
+        //ADD CLASS FRAGMENT INTO MAIN ACTIVITY
         btnClass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

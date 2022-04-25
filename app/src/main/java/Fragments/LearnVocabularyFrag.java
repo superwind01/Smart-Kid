@@ -2,7 +2,6 @@ package Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -10,22 +9,15 @@ import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.easyclass.R;
-import com.example.easyclass.VocabularyLessonActivity;
+import com.example.smartkid.R;
+import com.example.smartkid.VocabularyLessonActivity;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.List;
-import java.util.Locale;
 
-import API.Class;
 import API.ModelCommon;
 import API.Vocabulary;
 import Adapter.ListViewAdapter;
@@ -60,6 +52,8 @@ public class LearnVocabularyFrag extends Fragment {
                 if(response!=null)
                 {
                     final ArrayList<Vocabulary> vocabularies = response.getVocabularies();
+
+                    //SORT VOCABULARIES LIST
                     Collections.sort(vocabularies, new Comparator<Vocabulary>() {
                         @Override
                         public int compare(Vocabulary o1, Vocabulary o2) {

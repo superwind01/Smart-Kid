@@ -11,17 +11,20 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.easyclass.R;
-import com.example.easyclass.VideoShowActivity;
+import com.example.smartkid.R;
+import com.example.smartkid.VideoShowActivity;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 
 import API.ListVideo;
-import API.Topic;
 
+//TopicFragAdapter IS CATEGORIES FRAGMENT
+//ALMOST SAME WITH ListRecyclerVideoAdapter EXCEPT LAYOUT OF SONG
+//BOTH USE LAYOUT list_video_by_topic LIKE A PARENT RECYCLER VIEW
 public class TopicFragAdapter extends RecyclerView.Adapter<TopicFragAdapter.MyView>{
+
+    // DECLARE TYPE OF LIST TOPIC
+    //PUBLIC WILL BE ABLE TO USED IN OTHER CLASS (WHEN INSERT LIST VIDEO IN CATEGORIES FRAGMENT)
     public final static int TYPE_TOPIC = 1;
     public final static  int TYPE_SONG = 2;
     private Context context;
@@ -30,8 +33,12 @@ public class TopicFragAdapter extends RecyclerView.Adapter<TopicFragAdapter.MyVi
     public TopicFragAdapter(Context context, ArrayList<ListVideo> listVideos) {
         this.context = context;
         this.listVideos = listVideos;
+
+        //UPDATE LIST IF CHANGE
+        notifyDataSetChanged();
     }
 
+    //GET TYPE OF INSERTED LIST TOPIC
     @Override
     public int getItemViewType(int position) {
         return listVideos.get(position).getType();
@@ -40,6 +47,7 @@ public class TopicFragAdapter extends RecyclerView.Adapter<TopicFragAdapter.MyVi
     @NonNull
     @Override
     public MyView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        //THIS LAYOUT WILL INSERT LIST SONG OR TOPIC INTO RECYCLERVIEW
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_video_by_topic,parent,false);
         return new MyView(view);
     }
@@ -48,6 +56,7 @@ public class TopicFragAdapter extends RecyclerView.Adapter<TopicFragAdapter.MyVi
     public void onBindViewHolder(@NonNull MyView holder, @SuppressLint("RecyclerView") int position) {
         if(holder.getItemViewType() == TYPE_TOPIC)
         {
+            //DECLARE LINENEAR LAYOUT MANAGER TO MANAGE recyler_video_item (THIS ID list_video_by_topic )
             LinearLayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
             holder.recyclerVideoItem.setLayoutManager(layoutManager);
 
@@ -56,12 +65,16 @@ public class TopicFragAdapter extends RecyclerView.Adapter<TopicFragAdapter.MyVi
         }
         else if(holder.getItemViewType() == TYPE_SONG)
         {
+            //DECLARE LINENEAR LAYOUT MANAGER TO MANAGE recyler_video_item (IN LAYOUT list_video_by_topic )
             LinearLayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
             holder.recyclerVideoItem.setLayoutManager(layoutManager);
 
+            //CREATE ADAPTER FOR SONG (RecyclerVideoAdapter(ADAPTER FOLDER) WILL  DO THIS)
             ListSongAdapter mAdapter = new ListSongAdapter(context,listVideos.get(position).getSongs());
             holder.recyclerVideoItem.setAdapter(mAdapter);
 
+            //SET ON SONG ITEM IN LIST SONG WAS CLICKED
+            //START NEW VideoShowActivity  TO SHOW VIDEO
             mAdapter.setOnItemClickListener(new ListSongAdapter.OnTopicItemClickListener() {
                 @Override
                 public void onItemClick(int i) {

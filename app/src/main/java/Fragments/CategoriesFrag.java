@@ -2,7 +2,6 @@
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -14,7 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.easyclass.R;
+import com.example.smartkid.R;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -24,7 +23,6 @@ import API.ListVideo;
 import API.ModelCommon;
 import API.Song;
 import API.Topic;
-import Adapter.ListRecyclerVideoAdapter;
 import Adapter.TopicFragAdapter;
 import VolleyService.*;
 
@@ -41,11 +39,14 @@ public class CategoriesFrag extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_categories, container, false);
 
+        //DECLARE SHARE PREFERENCES
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("shareClass", Context.MODE_PRIVATE);
+        //GET SHARE PREFERENCES FROM CLASS FRAGMENT
         String idclass = sharedPreferences.getString("classKey","");
         String idbook = sharedPreferences.getString("bookKey","");
         ArrayList<ListVideo> listVideos = new ArrayList<>();
-        //Get Id topic (include get Song inside)
+
+        //GET ID TOPIC BY ID CLASS AND ID BOOK (INCLUDE GET SONG INSIDE)
         VolleyService.getRequest(getContext(), "Topic/GetByIDClassAndIDBook/" + idbook + "/" + idclass, new VolleyResponseListener() {
             @Override
             public void onError(String message) {
@@ -58,6 +59,7 @@ public class CategoriesFrag extends Fragment {
                 {
                     ArrayList<Topic> topic = response.getTopics();
 
+                    //SORT TOPIC
                     Collections.sort(topic, new Comparator<Topic>() {
                         @Override
                         public int compare(Topic o1, Topic o2) {
@@ -70,7 +72,7 @@ public class CategoriesFrag extends Fragment {
                         ArrayList<Topic> topic1 = new ArrayList<>();
                         topic1.add(topic.get(i));
 
-                        //Get video Song by IdTopic
+                        //GET VIDEO SONG BY ID TOPIC
                         int finalI = i;
                         VolleyService.getRequest(getContext(), "Song/GetByIdTopic/" + topic.get(i).getIdTopic(), new VolleyResponseListener() {
                             @Override
@@ -83,6 +85,8 @@ public class CategoriesFrag extends Fragment {
                                 if(response != null)
                                 {
                                     ArrayList<Song> songs = response.getSongs();
+
+                                    //SORT SONG BEFORE INSERT INTO LIST VIDEOS
                                     Collections.sort(songs, new Comparator<Song>() {
                                         @Override
                                         public int compare(Song o1, Song o2) {

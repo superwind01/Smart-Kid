@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import Fragments.LearnVocabularyFrag;
 import Fragments.LearningOutcomesFrag;
 
+//VIEW PAGER WAS USED IN VOCABULARY ACTIVITY TO MANAGE FRAGMENT( TAB LAYOUT)
 public class VPAdapter extends FragmentStateAdapter {
 
 //    private final ArrayList<Fragment> fragmentArrayList = new ArrayList<>();

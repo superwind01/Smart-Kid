@@ -1,11 +1,10 @@
-package com.example.easyclass;
+package com.example.smartkid;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 import android.view.Window;
-import android.view.WindowManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -18,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //FULL SCREEN, NO TITLE
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
@@ -25,9 +25,11 @@ public class MainActivity extends AppCompatActivity {
     mviewPager = findViewById(R.id.vp_mainActivity);
     mbottomNavigationView = findViewById(R.id.bottomNavigationView);
 
+    //SET ADAPTER FOR VIEW PAGER
     mviewPager.setAdapter(new ViewPagerMainActivityAdapter(this));
+    //CAN'T CHANGE TAB LAYOUT BY HORIZONTAL SCROLL
     mviewPager.setUserInputEnabled(false);
-        //Tao su kien khi chon vao icon o bottom navigation thi se gan gia tri cho mViewPager
+        //ASSIGN mPager VALUE WHEN CLICK NAVIGATION ITEM
         mbottomNavigationView.setOnItemSelectedListener(menuItem -> {
             int id = menuItem.getItemId();
             if(id == R.id.nav_home){
@@ -47,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         });
 
-        //Tao su kien khi Chuyen sang trang khac thi Checked item o bottom navigation
+        //CHECKED ITEM BOTTOM NAVIGATION WHEN CHANGE TAB
         mviewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {

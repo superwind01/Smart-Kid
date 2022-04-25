@@ -1,7 +1,10 @@
 package Fragments;
 
+import static android.graphics.Color.parseColor;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,33 +17,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.TextView;
 
-import com.example.easyclass.ExpandableHeightGridView;
-import com.example.easyclass.MainActivity;
-import com.example.easyclass.R;
+import com.example.smartkid.ExpandableHeightGridView;
+import com.example.smartkid.MainActivity;
+import com.example.smartkid.R;
 
 import java.util.ArrayList;
 
 import API.Book;
-import API.Class;
 import API.ModelCommon;
 import Adapter.GridViewAdapter;
 import VolleyService.*;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ClassFrag#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class ClassFrag extends Fragment {
 
-
-    public static ClassFrag newInstance(String param1, String param2) {
-        ClassFrag fragment = new ClassFrag();
-        Bundle args = new Bundle();
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -60,6 +51,7 @@ public class ClassFrag extends Fragment {
         Button btnClass5_6 = view.findViewById(R.id.btn_class5_6);
         Button btnClass18_36 = view.findViewById(R.id.btn_class18_36);
 
+        //CREATE SHARE PREFERENCE TO SAVE ID CLASS AND ID BOOK
         SharedPreferences sharedPref = getActivity().getSharedPreferences("shareClass",getContext().MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
 
@@ -77,18 +69,32 @@ public class ClassFrag extends Fragment {
             public void onResponse(ModelCommon response) {
                 ArrayList<Book> books = new ArrayList<>();
                 books = response.getBooks();
+
+                //USE ARRAYLIST book TO GET ARRAY BOOK NAME
                 ArrayList<String> book = new ArrayList<>();
                 for (int i =0; i <books.size() ; i++)
                 {
                     book.add(books.get(i).getNameBook());
                 }
+                //SET ADAPTER FOR GRIDVIEW gridBook
                 gridBook.setAdapter(new GridViewAdapter(getContext(),book.toArray(new String[0]),null,3));
 
                 ArrayList<Book> finalBooks = books;
+                //DECLARE POSITION FOR PICKED ITEM
+                final int[] previousPostion = {-1};
+
+                //SET ON ITEM VIEW CLICK
                 gridBook.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        //SAVE ID BOOK
                         editor.putString("bookKey", String.valueOf(finalBooks.get(i).getIdBook())).apply();
+                        //CHECKED ITEM WHEN ITEM CLICKED
+                        if(previousPostion[0] >= 0) {
+                            gridBook.getChildAt(previousPostion[0]).setBackgroundColor(Color.TRANSPARENT);
+                        }
+                        gridBook.getChildAt(i).setBackgroundColor(Color.parseColor("#1aa834"));
+                        previousPostion[0] = i;
                     }
                 });
             }
@@ -97,6 +103,8 @@ public class ClassFrag extends Fragment {
         btnClass3_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //START NEW ACTIVITY
+                //SAME WITH OTHER BUTTON
                 Intent intent = new Intent(getContext(), MainActivity.class);
                 intent.putExtra("class","3-4");
                 sharedPref.edit().putString("classKey","2").apply();
@@ -137,6 +145,7 @@ public class ClassFrag extends Fragment {
         return view;
     }
 
+    //STOP TOUCH IN MAIN ACTIVITY
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);

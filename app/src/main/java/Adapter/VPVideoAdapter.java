@@ -9,6 +9,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import Fragments.CategoriesFrag;
 import Fragments.FamousFrag;
 
+//VIEW PAGER WAS USED IN VIDEO ACTIVITY TO MANAGE FRAGMENT( TAB LAYOUT)
 public class VPVideoAdapter extends FragmentStateAdapter {
 
 

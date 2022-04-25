@@ -40,13 +40,17 @@
         <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/layout/activity_vocabulary.xml" value="0.1" />
         <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/layout/activity_vocabulary_lesson.xml" value="0.2" />
         <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/layout/fragment_chat.xml" value="0.22135416666666666" />
-        <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/layout/fragment_class.xml" value="0.176" />
+        <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/layout/fragment_class.xml" value="0.2" />
         <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/layout/fragment_famous.xml" value="0.1" />
         <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/layout/fragment_home.xml" value="0.152" />
         <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/layout/fragment_notification.xml" value="0.22135416666666666" />
         <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/layout/grid_book.xml" value="0.176" />
         <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/layout/grid_formalstudy.xml" value="0.22135416666666666" />
+        <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/layout/grid_item.xml" value="0.1" />
         <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/layout/grid_supplementstudy.xml" value="0.25416666666666665" />
+        <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/layout/list_name_by_topic.xml" value="0.136" />
+        <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/layout/list_song.xml" value="0.11865942028985507" />
+        <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/layout/list_video_by_topic.xml" value="0.11865942028985507" />
         <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/layout/menu_bottom_navigation.xml" value="0.22135416666666666" />
         <entry key="..\:/Phat_trien_ung_dung/SmartKid/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.22135416666666666" />
       </map>

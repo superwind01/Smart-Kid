@@ -1,4 +1,4 @@
-package com.example.easyclass;
+package com.example.smartkid;
 
 import android.content.Context;
 

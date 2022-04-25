@@ -9,15 +9,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.easyclass.R;
+import com.example.smartkid.R;
 
 import java.util.ArrayList;
 
 import API.Topic;
 
+//THIS IS CHILD ADAPTER OF LIST RECYCLER VIDEO ADAPTER
+//CAN USING AGAIN FOR OTHER PURPOSE
 public class RecyclerTopicAdapter extends RecyclerView.Adapter<RecyclerTopicAdapter.ViewHolder> {
     private Context context;
 
+    //DECLARE LISTENER WHEN ITEM CLICKED (CREATE INTERFACE BELOW)
     private OnTopicItemClickListener mListener;
 
     private ArrayList<Topic> topics;
@@ -29,9 +32,12 @@ public class RecyclerTopicAdapter extends RecyclerView.Adapter<RecyclerTopicAdap
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView txtNameTopic;
+        //MUST ADD OnTopicItemClickListener listener INTO FUNCTION public MyView(@NonNull View itemView)
         public ViewHolder(@NonNull View itemView, OnTopicItemClickListener listener) {
             super(itemView);
             txtNameTopic = itemView.findViewById(R.id.txt_topic);
+
+            //SET CLICK LISTENER FOR LIST TOPIC
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -50,6 +56,7 @@ public class RecyclerTopicAdapter extends RecyclerView.Adapter<RecyclerTopicAdap
     @NonNull
     @Override
     public RecyclerTopicAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        //SHOW IN LAYOUT list_name_by_topic
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.list_name_by_topic, parent, false);
 
@@ -68,7 +75,7 @@ public class RecyclerTopicAdapter extends RecyclerView.Adapter<RecyclerTopicAdap
         return topics.size();
     }
 
-    //Set Click Listener
+    //DECLARE INTERFACE FOR CLICK LISTENER
     public interface OnTopicItemClickListener{
         void onItemClick(int position);
     }
