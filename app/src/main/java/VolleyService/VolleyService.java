@@ -25,10 +25,13 @@ import java.util.Arrays;
 
 import API.Book;
 import API.Class;
+import API.Lesson;
 import API.ModelCommon;
 import API.Song;
+import API.Speak;
 import API.Topic;
 import API.Vocabulary;
+import API.VocabularyByTopicLesson;
 
 public class VolleyService {
     public static ModelCommon getRequest(Context context, String Url, final VolleyResponseListener listener){
@@ -100,6 +103,36 @@ public class VolleyService {
                             books.add(gson.fromJson(mJson, Book.class));
                         }
                         modelCommon.setBooks(books);
+                    }
+                    else if(Url.startsWith("Speak/"))
+                    {
+                        ArrayList<Speak> speaks = new ArrayList<>();
+                        for (int i = 0; i < response.length(); i++) {
+                            JSONObject rec = response.optJSONObject(i);
+                            JsonElement mJson = parser.parse(String.valueOf(rec));
+                            speaks.add(gson.fromJson(mJson, Speak.class));
+                        }
+                        modelCommon.setSpeaks(speaks);
+                    }
+                    else if(Url.startsWith("Lesson/"))
+                    {
+                        ArrayList<Lesson> lessons = new ArrayList<>();
+                        for (int i = 0; i < response.length(); i++) {
+                            JSONObject rec = response.optJSONObject(i);
+                            JsonElement mJson = parser.parse(String.valueOf(rec));
+                            lessons.add(gson.fromJson(mJson, Lesson.class));
+                        }
+                        modelCommon.setLessons(lessons);
+                    }
+                    else if(Url.startsWith("VocabularyByTopicLesson/"))
+                    {
+                        ArrayList<VocabularyByTopicLesson> vocabularyByTopicLessons = new ArrayList<>();
+                        for (int i = 0; i < response.length(); i++) {
+                            JSONObject rec = response.optJSONObject(i);
+                            JsonElement mJson = parser.parse(String.valueOf(rec));
+                            vocabularyByTopicLessons.add(gson.fromJson(mJson, VocabularyByTopicLesson.class));
+                        }
+                        modelCommon.setVocabularyByTopicLessons(vocabularyByTopicLessons);
                     }
                     //TAO SU KIEN CHO LISTENER
                     listener.onResponse(modelCommon);

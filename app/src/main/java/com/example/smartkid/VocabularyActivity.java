@@ -35,7 +35,7 @@ public class VocabularyActivity extends AppCompatActivity {
                     tab.setText("Learn Vocabularies");
                     break;
                 case 1:
-                    tab.setText("Categories");
+                    tab.setText("Learning Outcomes");
             }
         }).attach();
 

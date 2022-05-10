@@ -1,0 +1,42 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="Fragments.OnlineLectureFrag">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical">
+
+       <TextView
+           android:id="@+id/txt_topicStudy"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Unit 1: Family - Study"
+           android:layout_margin="10dp"
+           android:textSize="24sp"
+           android:textStyle="bold"/>
+       <TextView
+           android:id="@+id/txt_topicOnlineLectures"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text = "Online Lecture"
+           android:textStyle="bold"
+           android:textSize="20sp"
+           android:gravity="center"
+           android:background="@drawable/box_round_retangle"
+           android:backgroundTint="#5cce73"
+           android:layout_marginLeft="20dp"
+           android:layout_marginRight="20dp"
+           android:layout_marginTop="5dp"/>
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/recycler_lesson"
+           android:layout_marginLeft="60dp"
+           android:layout_marginRight="60dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="8dp"/>
+   </LinearLayout>
+
+</FrameLayout>

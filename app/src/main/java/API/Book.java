@@ -2,6 +2,7 @@ package API;
 
 public class Book {
     private int idbook;
+    private String image;
     private String nameBook;
     private String symbol;
     private Boolean status;
@@ -38,6 +39,14 @@ public class Book {
 
     public void setStatus(Boolean status) {
         this.status = status;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
 //    public String getCpitClassBook() {

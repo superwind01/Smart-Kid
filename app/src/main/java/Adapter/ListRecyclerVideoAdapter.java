@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 import API.ListVideo;
 
-//ALMOST SAME WITH TopicFragAdapter EXCEPT LAYOUT OF SONG
+//ALMOST SAME WITH CategoriesFragAdapter EXCEPT LAYOUT OF SONG
 //BOTH USE LAYOUT list_video_by_topic LIKE A PARENT RECYCLER VIEW
 public class ListRecyclerVideoAdapter extends RecyclerView.Adapter<ListRecyclerVideoAdapter.MyViewHolder> {
 
@@ -50,19 +50,18 @@ public class ListRecyclerVideoAdapter extends RecyclerView.Adapter<ListRecyclerV
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         //THIS LAYOUT WILL INSERT LIST SONG OR TOPIC INTO RECYCLERVIEW
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_video_by_topic,null);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.child_recyclerview,parent,false);
         return new MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         ArrayList<ListVideo> listVideoArrayList = listVideos;
+        //DECLARE LINENEAR LAYOUT MANAGER TO MANAGE recyler_video_item (THIS ID list_video_by_topic )
+        LinearLayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
+        holder.recyclerVideoItem.setLayoutManager(layoutManager);
         if(holder.getItemViewType() == TYPE_SONG)
         {
-            //DECLARE LINENEAR LAYOUT MANAGER TO MANAGE recyler_video_item (IN LAYOUT list_video_by_topic )
-            LinearLayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
-            holder.recyclerVideoItem.setLayoutManager(layoutManager);
-
             //CREATE ADAPTER FOR SONG (RecyclerVideoAdapter(ADAPTER FOLDER) WILL  DO THIS)
             RecyclerVideoAdapter videoAdapter = new RecyclerVideoAdapter(context,listVideoArrayList.get(position).getSongs());
             holder.recyclerVideoItem.setAdapter(videoAdapter);
@@ -85,10 +84,6 @@ public class ListRecyclerVideoAdapter extends RecyclerView.Adapter<ListRecyclerV
             });
         }else if(holder.getItemViewType() == TYPE_TOPIC)
         {
-            //DECLARE LINENEAR LAYOUT MANAGER TO MANAGE recyler_video_item (THIS ID list_video_by_topic )
-            LinearLayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
-            holder.recyclerVideoItem.setLayoutManager(layoutManager);
-
             //CREATE ADAPTER FOR TOPIC (RecyclerTopicAdapter(ADAPTER FOLDER) WILL  DO THIS)
             RecyclerTopicAdapter topicAdapter = new RecyclerTopicAdapter(context,listVideoArrayList.get(position).getTopics());
             holder.recyclerVideoItem.setAdapter(topicAdapter);

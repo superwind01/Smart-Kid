@@ -12,7 +12,8 @@
         <LinearLayout
             android:layout_margin="5dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="#dff6e6">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -32,6 +33,7 @@
         android:scrollbars="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_video_by_topic"
             android:scrollbars="vertical"

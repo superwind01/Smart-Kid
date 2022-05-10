@@ -1,17 +1,26 @@
 package API;
 
 public class Vocabulary {
-    private int idVocabulary;
+    private int idvocabulary;
     private String name;
     private String pronounce;
     private String description;
 
+    public Vocabulary(int idvocabulary, String name, String pronounce, String description, String vnName, boolean status) {
+        this.idvocabulary = idvocabulary;
+        this.name = name;
+        this.pronounce = pronounce;
+        this.description = description;
+        this.vnName = vnName;
+        this.status = status;
+    }
+
     public int getIdVocabulary() {
-        return idVocabulary;
+        return idvocabulary;
     }
 
     public void setIdVocabulary(int idVocabulary) {
-        this.idVocabulary = idVocabulary;
+        this.idvocabulary = idVocabulary;
     }
 
     public String getName() {

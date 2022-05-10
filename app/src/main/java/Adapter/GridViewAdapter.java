@@ -3,7 +3,9 @@ package Adapter;
 import android.content.Context;
 
 
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +16,9 @@ import android.widget.TextView;
 
 
 import com.example.smartkid.R;
+import com.squareup.picasso.Picasso;
+
+import java.net.URL;
 
 public class GridViewAdapter extends BaseAdapter {
 
@@ -21,12 +26,14 @@ public class GridViewAdapter extends BaseAdapter {
     private String[] nameLogo;
     private int[] Logo;
     private int grid;
+    private String[] imageName;
 
-    public GridViewAdapter(Context context, String[] nameLogo, int[] logo, int grid) {
+    public GridViewAdapter(Context context, String[] nameLogo, int[] logo, String[] imageName,int grid) {
         this.context = context;
         this.nameLogo = nameLogo;
         Logo = logo;
         this.grid = grid;
+        this.imageName = imageName;
     }
 
 
@@ -91,6 +98,8 @@ public class GridViewAdapter extends BaseAdapter {
                 ImageView imageView = (ImageView) view.findViewById(R.id.img_book);
 
                 textView.setText(nameLogo[i]);
+                Uri uri = Uri.parse("http://resource.bkt.net.vn/ImagesPNG/"+imageName[i]+".png");
+                Picasso.get().load(uri).into(imageView);
                 break;
             }
         }

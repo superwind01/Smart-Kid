@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.example.smartkid.R;
 
@@ -23,7 +24,7 @@ import API.ListVideo;
 import API.ModelCommon;
 import API.Song;
 import API.Topic;
-import Adapter.TopicFragAdapter;
+import Adapter.CategoriesFragAdapter;
 import VolleyService.*;
 
 public class CategoriesFrag extends Fragment {
@@ -38,6 +39,7 @@ public class CategoriesFrag extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_categories, container, false);
+        RecyclerView recyclerView = view.findViewById(R.id.recycler_video_topic);
 
         //DECLARE SHARE PREFERENCES
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("shareClass", Context.MODE_PRIVATE);
@@ -93,14 +95,23 @@ public class CategoriesFrag extends Fragment {
                                             return o1.getName().toUpperCase().compareTo(o2.getName().toUpperCase());
                                         }
                                     });
-                                    listVideos.add(new ListVideo(TopicFragAdapter.TYPE_TOPIC, topic1, null));
-                                    listVideos.add(new ListVideo(TopicFragAdapter.TYPE_SONG, null, songs));
+                                    listVideos.add(new ListVideo(CategoriesFragAdapter.TYPE_TOPIC, topic1, null));
+                                    listVideos.add(new ListVideo(CategoriesFragAdapter.TYPE_SONG, null, songs));
                                 }
 
                                 RecyclerView recyclerVideoTopic = requireView().findViewById(R.id.recycler_video_topic);
                                 recyclerVideoTopic.setLayoutManager(new LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false));
 
-                                recyclerVideoTopic.setAdapter(new TopicFragAdapter(getContext(), listVideos));
+                                CategoriesFragAdapter mAdapter = new CategoriesFragAdapter(getContext(), listVideos);
+                                recyclerVideoTopic.setAdapter(mAdapter);
+
+                                mAdapter.setOnClickListener(new CategoriesFragAdapter.OnClickListener() {
+                                    @Override
+                                    public void onItemClick(int position) {
+                                        recyclerView.setVisibility(View.GONE);
+                                        recyclerView.setActivated(true);
+                                    }
+                                });
                             }
                         });
                     }

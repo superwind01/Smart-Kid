@@ -37,4 +37,19 @@
     <string name="store">Store</string>
     <string name="chat">Chat</string>
     <string name="notification">Notifications</string>
+    <string name="previousExample">Previous Example</string>
+    <string name="nextExample">Next Example</string>
+    <string name="Study">Study</string>
+    <string name="onlineLectures">Online Lectures</string>
+    <string name="identifyExcercise">Identify Excercise</string>
+    <string name="listenExcercise">Listen Excercise</string>
+    <string name="pronounceExcercise">Pronounce Excercise</string>
+    <string name="sentencePatternExercises">Sentence Pattern Exercises</string>
+    <string name="song">Song</string>
+    <string name="story">Story</string>
+    <string name="lesson">Lesson</string>
+    <string name="playList">Playlist</string>
+    <string name="time">Time</string>
+    <string name="singer">Singer</string>
+    <string name="composer">Composer</string>
 </resources>

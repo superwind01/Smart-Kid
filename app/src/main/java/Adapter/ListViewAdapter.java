@@ -1,5 +1,6 @@
 package Adapter;
 
+import android.graphics.Color;
 import android.os.Build;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+import API.ListNameVocabulary;
 import API.Vocabulary;
 
 //USED IN FRAGMENT LEARN VOCABULARY
@@ -41,7 +43,7 @@ public class ListViewAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int i) {
-        return listVocabulary.get(i).getIdVocabulary();
+        return 0;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -51,19 +53,20 @@ public class ListViewAdapter extends BaseAdapter {
         // IF CONVERTVIEW != NULL, IT'S MEAN VIEW WAS USED AGAIN, ONLY UPDATE NEW DATA
         //IF CONVERTVIEW = NULL, CREATE NEW VIEW
         View view = View.inflate(parent.getContext(), R.layout.list_vocabulary, null);
-
-        //SORT LIST VOCABULARY BEFORE INSERT INTO LISTVIEW
-        Collections.sort(listVocabulary, new Comparator<Vocabulary>() {
-            @Override
-            public int compare(Vocabulary o1, Vocabulary o2) {
-                return o1.getName().toUpperCase().compareTo(o2.getName().toUpperCase());
-            }
-        });
-        //BIND DATA INTO VIEW
-        Vocabulary vocabulary = this.listVocabulary.get(position);
         TextView txtName = view.findViewById(R.id.txt_nameVocabulary);
-        txtName.setText(vocabulary.getName().toUpperCase());
-
+                //BIND DATA INTO VIEW
+            Vocabulary vocabulary = this.listVocabulary.get(position);
+                if(vocabulary.getIdVocabulary() == 0)
+                {
+                    txtName.setText(vocabulary.getName());
+                    txtName.setBackgroundColor(Color.parseColor("#dff6e6"));
+                    txtName.setTextSize(24);
+                    view.setClickable(false);
+                }
+                else
+                {
+                    txtName.setText(vocabulary.getName());
+                }
         return view;
     }
 }

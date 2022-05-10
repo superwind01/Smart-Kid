@@ -14,6 +14,7 @@ import android.widget.Button;
 
 import com.example.smartkid.ExpandableHeightGridView;
 import com.example.smartkid.R;
+import com.example.smartkid.StudyActivity;
 import com.example.smartkid.VideoActivity;
 import com.example.smartkid.VocabularyActivity;
 
@@ -65,9 +66,9 @@ public class HomeFrag extends Fragment {
         ExpandableHeightGridView gridSupplementStudy = (ExpandableHeightGridView) view.findViewById(R.id.grid_SupplementStudy);
         gridSupplementStudy.setExpanded(true);
 
-        gridItem.setAdapter(new GridViewAdapter(getActivity(), nameLogo, Logo, 0));
-        gridFormalStudy.setAdapter(new GridViewAdapter(getActivity(), nameFormal, formalLogo, 1));
-        gridSupplementStudy.setAdapter(new GridViewAdapter(getActivity(), nameSupplement, supplementLogo, 2));
+        gridItem.setAdapter(new GridViewAdapter(getActivity(), nameLogo, Logo, null,0));
+        gridFormalStudy.setAdapter(new GridViewAdapter(getActivity(), nameFormal, formalLogo,null, 1));
+        gridSupplementStudy.setAdapter(new GridViewAdapter(getActivity(), nameSupplement, supplementLogo, null,2));
 
         gridFormalStudy.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -101,6 +102,17 @@ public class HomeFrag extends Fragment {
                 if(i == 4)
                 {
                     Intent intent = new Intent(getActivity(), VideoActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
+
+        gridSupplementStudy.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                if(i ==0)
+                {
+                    Intent intent = new Intent(getActivity(), StudyActivity.class);
                     startActivity(intent);
                 }
             }

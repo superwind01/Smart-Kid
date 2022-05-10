@@ -2,7 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     tools:context="Fragments.HomeFrag">
 
     <ScrollView android:layout_width="match_parent"
@@ -146,12 +146,47 @@
                         android:verticalSpacing="20dp" />
 
                     <LinearLayout
+                        android:id="@+id/linearLayout_supplementStudy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/box_round_retangle"
+                        android:orientation="vertical"
+                        android:elevation="1dp"
+                        app:layout_constraintTop_toBottomOf="@+id/grid_item">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_margin="5dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/supplementStudy"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+
+                            <com.example.smartkid.ExpandableHeightGridView
+                                android:id="@+id/grid_SupplementStudy"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:horizontalSpacing="10dp"
+                                android:isScrollContainer="false"
+                                android:numColumns="3"
+                                android:stretchMode="columnWidth"
+                                android:verticalSpacing="10dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
                         android:id="@+id/linearLayout_formalStudy"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:orientation="vertical"
-                        app:layout_constraintTop_toBottomOf="@+id/grid_item">
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout_supplementStudy">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -198,42 +233,6 @@
                             android:numColumns="2"
                             android:stretchMode="columnWidth"
                             android:verticalSpacing="10dp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/linearLayout_supplementStudy"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/box_round_retangle"
-                        android:orientation="vertical"
-                        android:elevation="1dp"
-                        app:layout_constraintTop_toBottomOf="@+id/grid_item">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:layout_margin="5dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/supplementStudy"
-                                android:textSize="24sp"
-                                android:textStyle="bold" />
-
-                            <com.example.smartkid.ExpandableHeightGridView
-                                android:id="@+id/grid_SupplementStudy"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:horizontalSpacing="10dp"
-                                android:isScrollContainer="false"
-                                android:numColumns="3"
-                                android:stretchMode="columnWidth"
-                                android:verticalSpacing="10dp" />
-                        </LinearLayout>
                     </LinearLayout>
 
                     <TextView

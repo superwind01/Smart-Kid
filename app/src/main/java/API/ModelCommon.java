@@ -8,6 +8,33 @@ public class ModelCommon {
     private ArrayList<Song> songs = new ArrayList<>();
     private ArrayList<Topic> topics = new ArrayList<>();
     private ArrayList<Book> books = new ArrayList<>();
+    private ArrayList<Speak> speaks = new ArrayList<>();
+    private ArrayList<Lesson> lessons = new ArrayList<>();
+    private ArrayList<VocabularyByTopicLesson> vocabularyByTopicLessons = new ArrayList<>();
+
+    public ArrayList<VocabularyByTopicLesson> getVocabularyByTopicLessons() {
+        return vocabularyByTopicLessons;
+    }
+
+    public void setVocabularyByTopicLessons(ArrayList<VocabularyByTopicLesson> vocabularyByTopicLessons) {
+        this.vocabularyByTopicLessons = vocabularyByTopicLessons;
+    }
+
+    public ArrayList<Lesson> getLessons() {
+        return lessons;
+    }
+
+    public void setLessons(ArrayList<Lesson> lessons) {
+        this.lessons = lessons;
+    }
+
+    public ArrayList<Speak> getSpeaks() {
+        return speaks;
+    }
+
+    public void setSpeaks(ArrayList<Speak> speaks) {
+        this.speaks = speaks;
+    }
 
     public ArrayList<Song> getSongs() {
         return songs;

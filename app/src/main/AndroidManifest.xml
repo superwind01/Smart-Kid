@@ -13,19 +13,28 @@
         android:theme="@style/Theme.EasyClass"
         android:usesCleartextTraffic="true">
         <activity
-            android:name="com.example.smartkid.VideoShowActivity"
-            android:exported="false"/>
-        <activity
-            android:name="com.example.smartkid.VideoActivity"
-            android:exported="false"/>
-        <activity
-            android:name="com.example.smartkid.VocabularyLessonActivity"
+            android:name=".SongDetailActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.smartkid.VocabularyActivity"
+            android:name=".LessonVideoActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.smartkid.MainActivity"
+            android:name=".StudyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VideoShowActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VideoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VocabularyLessonActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VocabularyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

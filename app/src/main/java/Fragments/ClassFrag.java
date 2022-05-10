@@ -72,12 +72,14 @@ public class ClassFrag extends Fragment {
 
                 //USE ARRAYLIST book TO GET ARRAY BOOK NAME
                 ArrayList<String> book = new ArrayList<>();
+                ArrayList<String> image = new ArrayList<>();
                 for (int i =0; i <books.size() ; i++)
                 {
                     book.add(books.get(i).getNameBook());
+                    image.add((books.get(i).getImage()));
                 }
                 //SET ADAPTER FOR GRIDVIEW gridBook
-                gridBook.setAdapter(new GridViewAdapter(getContext(),book.toArray(new String[0]),null,3));
+                gridBook.setAdapter(new GridViewAdapter(getContext(),book.toArray(new String[0]),null,image.toArray(new String[0]),3));
 
                 ArrayList<Book> finalBooks = books;
                 //DECLARE POSITION FOR PICKED ITEM
@@ -89,6 +91,8 @@ public class ClassFrag extends Fragment {
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                         //SAVE ID BOOK
                         editor.putString("bookKey", String.valueOf(finalBooks.get(i).getIdBook())).apply();
+                        //SAVE NAME BOOK
+                        editor.putString("namebookKey",finalBooks.get(i).getNameBook()).apply();
                         //CHECKED ITEM WHEN ITEM CLICKED
                         if(previousPostion[0] >= 0) {
                             gridBook.getChildAt(previousPostion[0]).setBackgroundColor(Color.TRANSPARENT);

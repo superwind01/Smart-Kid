@@ -1,6 +1,7 @@
 package Adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +13,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.smartkid.R;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import API.Topic;
+import API.Vocabulary;
 
 //THIS IS CHILD ADAPTER OF LIST RECYCLER VIDEO ADAPTER
 //CAN USING AGAIN FOR OTHER PURPOSE
@@ -29,6 +33,7 @@ public class RecyclerTopicAdapter extends RecyclerView.Adapter<RecyclerTopicAdap
         this.context = context;
         this.topics = topics;
     }
+
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView txtNameTopic;
@@ -60,12 +65,15 @@ public class RecyclerTopicAdapter extends RecyclerView.Adapter<RecyclerTopicAdap
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.list_name_by_topic, parent, false);
 
+
+
         return new RecyclerTopicAdapter.ViewHolder(view,mListener);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerTopicAdapter.ViewHolder holder, int position) {
         holder.txtNameTopic.setText(topics.get(position).getName());
+
 //        holder.getTxtViewVideo().setText(viewVideo[position]);
 //        holder.getImgVideo().setImageResource(image[position]);
     }
